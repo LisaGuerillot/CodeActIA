@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "C:/Users/lisag/Documents/Scolaire/EPF/2021-2022/Stage Euromov/Activites/package de la fenetre glissante/actimetry/renv/library/R-4.1/x86_64-w64-mingw32",
+        "installDependencies": true
+    }
+}

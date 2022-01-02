@@ -1,0 +1,142 @@
+library(actimetry)
+library(actimetry)
+library(actimetry)
+devtools::use_package(EnvStats)
+install.packages("devtools")
+install.packages("usethis")
+devtools::use_package(EnvStats)
+devtools::use_package(e1071)
+source("~/Scolaire/EPF/2021-2022/Stage Euromov/Activites/package de la fenetre glissante/actimetry/R/classify.R")
+source("~/Scolaire/EPF/2021-2022/Stage Euromov/Activites/package de la fenetre glissante/actimetry/R/classify.R")
+vec <- c(1:3)
+vec
+vec <- c(5, vec)
+vec
+head(df$immobility, 1)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+df <- resampled_accelerations
+df$immobility <- 0
+df[abs(df$overall_left_acc) + abs(df$overall_right_acc) < immobility_threshold, "immobility"] <- 1
+if (df$immobility[1] == 0){
+df$start_mov <- c(-1, diff(df$immobility))
+} else if (df$immobility[1] == 1){
+df$start_mov <- c(0, diff(df$immobility))
+}
+filtered_data <- df[df$immobility == 0, ]
+row_threshold <- time_threshold * resampling_frequency
+start_short_move <- c()
+gaps <- diff(which(filtered_data$start_mov == - 1))#return the difference between
+if (gaps[1] < row_threshold){
+start_short_move <- c(start_short_move, 1) #List of the index of beginning of short movements
+}
+ind_tot <- gaps[1] #We count the index where we are
+for (k in 2:length(gaps)){
+if (gaps[k] < row_threshold){
+start_short_move <- c(start_short_move, ind_tot + 1) #We use the total index from the range before + 1, because it corresponds to the beginning od this short movement
+}
+ind_tot <- ind_tot + gaps[k]#the index in the list
+}
+if(tail(start_short_move, 1) == nrow(filtered_data)){ #we check that their is no a problem with the value on the border
+start_short_move <- start_short_move[-length(start_short_move)]
+}
+index_to_remove <- c()
+for (i in start_short_move){
+k <- i + 1
+while(filtered_data$start_mov[k] != - 1){
+index_to_remove <- c(index_to_remove, k)
+k <- k + 1
+}
+}
+filtered_data <- filtered_data[-index_to_remove, ]
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+evaluate_MAE <- function(predicted_labels, expected_seq, database){
+label_list <- c(unique(paste(database$label)), "no-movement")
+sum <- 0
+for (lab in label_list){
+x <- predicted_labels["occurrences"][predicted_labels["label_movements"] == lab]
+y <- expected_seq["occurrences"][expected_seq["label_movements"] == lab]
+print(x)
+print(y)
+sum <- sum + abs(x - y)
+}
+mae <- sum/length(label_list)
+return(mae)
+}
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+install.packages("roxygen2")
+install.packages("e1071")
+library(actimetry)
+library(actimetry)
+library(actimetry)
+install.packages("randomForest")
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
+library(actimetry)
