@@ -8,3 +8,4 @@
 #3) Optimization : this folder contains the scripts for the search grid and the global function (overall treatment)
 #4) Importance of descripteurs in prediction : the script which allows to find the importance of each descriptors
 #5) Data : the data for the treatment
+#6) Shiny application : This is an application which allows to display the result of the data treatment. It displays the obtained labels table and the graphes of resampled data, motion data, and labelled data
