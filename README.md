@@ -5,3 +5,4 @@
 # - pipelines : this is the folder containing the pipelines of the data treatment : random forest with sliding window, random forest without sliding window, distance minimization with slidig window, distance minimization without slidig window 
 # - actimetry : this is the package which contains all the functions to realize the data treatment
 # - Optimization : this folder contains the scripts for the search grid and the global function (overall treatment)
+# - Importance of descripteurs in prediction : the script which allows to find the importance of each descriptors
